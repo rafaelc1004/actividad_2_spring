@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+		<title>listado de alumnos</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+		
+	</head>
+	
+	<body>
+		<h1 align="center">Listado de Carreras</h1>
+		
+		<div class="container">
+			<div class="row">
+			<a th:href="@{/carrera/nuevo}">Nueva Carrera</a>
+				<table class="table table-success table-striped">
+					
+					<thead>
+						<tr>
+							<th scope="col row">Id</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Descripcion</th>
+							<th scope="col">Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="carrera : ${listadoCarrera}">
+							<th scope="row" th:text="${carrera.id}"></th>
+							<td th:text="${carrera.nombre}"></td>
+							<td th:text="${carrera.descripcion}"></td>
+							<td>
+								<a th:href="@{/carrera/editar/{carreraId}(carreraId=${carrera.id})}">Editar</a>
+								<a th:href="@{/carrera/eliminar(id=${carrera.id})}">Eliminar</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+	</body>
+</html>

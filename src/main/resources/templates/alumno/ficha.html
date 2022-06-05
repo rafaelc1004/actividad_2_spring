@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+		<title>listado de alumnos</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	
+	<body>
+	
+			nombre :<span th:text="${alumno.nombre}"/></br>
+			fecha de nacimiento :<span th:text="${alumno.fechaNacimiento}"/>
+		
+	</body>
+</html>
